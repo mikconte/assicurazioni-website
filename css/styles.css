@@ -873,7 +873,7 @@ footer {
 
   /* Menu nav nascosto di default su mobile */
   #main-nav {
-    display: none;
+    display: none !important;
     position: fixed;
     top: 0;
     right: 0;
@@ -888,7 +888,7 @@ footer {
   }
 
   #main-nav.is-open {
-    display: flex;
+    display: flex !important;
   }
 
   #main-nav ul {
@@ -1223,6 +1223,9 @@ footer {
   }
   .top-bar-chip {
     display: none !important;
+  }
+  .top-bar-gmaps {
+    display: none;
   }
   .top-bar-badge {
     white-space: nowrap;
