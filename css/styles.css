@@ -225,20 +225,37 @@ nav a:hover {
 .header-btn-preventivo {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background-color: #0a192f;
-  color: #ffffff;
-  padding: 10px 22px;
-  border-radius: 6px;
-  font-family: inherit;
-  font-size: 1.0rem;
-  font-weight: 700;
-  letter-spacing: 0.2px;
+  gap: 6px;
+  padding: 9px 20px;
+  background: var(--color-navy);
+  color: #fff;
+  border-radius: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
   text-decoration: none;
+  letter-spacing: 0.01em;
   transition: var(--transition-fast);
-  box-shadow: 0 4px 14px rgba(10, 25, 47, 0.18);
-  border: 1px solid rgba(10, 25, 47, 0.1);
   white-space: nowrap;
+}
+
+/* Hamburger button — nascosto su desktop */
+.nav-hamburger {
+  display: none;
+}
+
+/* Overlay scuro per chiudere il menu mobile */
+.nav-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 25, 47, 0.45);
+  z-index: 98;
+  backdrop-filter: blur(2px);
+}
+
+/* Preventivo mobile: nascosto su desktop */
+.nav-mobile-cta {
+  display: none;
 }
 
 .header-btn-preventivo:hover {
@@ -801,23 +818,159 @@ footer {
     padding: 0 16px;
   }
 
-  /* Header & Navigation su Smartphone */
+  /* Header & Navigation su Smartphone — Hamburger Menu */
   header .container {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 16px;
+    gap: 0;
+  }
+
+  /* Nasconde il bottone Preventivo su mobile (appare nel menu) */
+  #header-btn-preventivo {
+    display: none;
+  }
+
+  /* Mostra il bottone hamburger */
+  .nav-hamburger {
+    display: flex;
     flex-direction: column;
-    gap: 16px;
-    padding: 16px 0;
-  }
-  nav ul {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 8px 12px;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 8px;
+    z-index: 110;
+    flex-shrink: 0;
   }
+
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: var(--color-navy);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transform-origin: center;
+  }
+
+  /* Animazione X quando il menu è aperto */
+  .nav-hamburger.is-open span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  .nav-hamburger.is-open span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+  .nav-hamburger.is-open span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Menu nav nascosto di default su mobile */
+  #main-nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 280px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -4px 0 24px rgba(10, 25, 47, 0.15);
+    z-index: 99;
+    overflow-y: auto;
+    padding: 80px 0 32px;
+    flex-direction: column;
+  }
+
+  #main-nav.is-open {
+    display: flex;
+  }
+
+  #main-nav ul {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 16px;
+  }
+
+  #main-nav li {
+    border-bottom: 1px solid rgba(10, 25, 47, 0.07);
+  }
+
+  #main-nav > ul > li:last-child {
+    border-bottom: none;
+  }
+
   nav a {
-    font-size: 0.85rem;
-    padding: 6px 10px;
-    background: rgba(255, 255, 255, 0.04);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 1rem;
+    padding: 14px 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: none;
+    border: none;
+    border-radius: 0;
+    color: var(--color-navy);
+    font-weight: 600;
+    width: 100%;
+  }
+
+  /* Dropdown mobile: nascosti, espandibili al tap */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    background: rgba(10, 25, 47, 0.04);
+    border: none;
+    border-radius: 8px;
+    box-shadow: none;
+    padding: 4px 0 8px 12px;
+    margin: 0 0 8px;
+    min-width: unset;
+    display: none;
+  }
+
+  .dropdown-menu::before {
+    display: none;
+  }
+
+  .dropdown-menu.is-open {
+    display: block;
+  }
+
+  .dropdown-menu li a {
+    font-size: 0.9rem;
+    padding: 10px 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+  }
+
+  /* Bottone Preventivo in fondo al menu mobile */
+  #main-nav::after {
+    content: none;
+  }
+
+  .nav-mobile-cta {
+    display: block;
+    margin: 24px 16px 0;
+    padding: 12px 20px;
+    background: var(--color-navy);
+    color: #fff;
+    text-align: center;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+  }
+
+  /* Overlay attivo */
+  .nav-overlay.is-open {
+    display: block;
   }
 
   /* Hero Section */
@@ -1049,17 +1202,43 @@ footer {
 }
 
 @media (max-width: 768px) {
+  .top-bar {
+    font-size: 0.68rem;
+    padding: 5px 0;
+    overflow: hidden;
+  }
+  .top-bar > .container {
+    padding: 0 10px;
+  }
   .top-bar-wrapper {
     justify-content: space-between;
     flex-wrap: nowrap;
-    gap: 6px;
+    gap: 4px;
     width: 100%;
+    overflow: hidden;
+  }
+  .top-bar-left {
+    min-width: 0;
+    overflow: hidden;
   }
   .top-bar-chip {
     display: none !important;
   }
-  .top-bar-badge, .top-bar-cta-phone {
+  .top-bar-badge {
     white-space: nowrap;
+    padding: 3px 7px;
+    gap: 3px;
+    font-size: 0.68rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+  }
+  .top-bar-cta-phone {
+    white-space: nowrap;
+    padding: 4px 10px;
+    gap: 3px;
+    font-size: 0.68rem;
+    flex-shrink: 0;
   }
 }
 

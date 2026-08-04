@@ -217,75 +217,30 @@
       <a href="index.html" class="logo" style="text-decoration: none; color: inherit;">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0a192f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: -3px; margin-right: 4px;"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg> Falcitelli Assicurazioni
       </a>
-      <nav>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Apri menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav id="main-nav">
         <ul>
-          <!-- Privati & Famiglie (Dropdown) -->
-          <li class="nav-item-dropdown">
-            <a href="index.html#servizi" id="nav-personal">
-              Privati &amp; Famiglie 
-              <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="index.html#servizi" class="dropdown-link-personal">🚗 Auto e Mobilità</a></li>
-              <li><a href="index.html#servizi" class="dropdown-link-personal">🏠 Casa e Famiglia</a></li>
-              <li><a href="index.html#servizi" class="dropdown-link-personal">👵Polizze Vita</a></li>
-              <li><a href="index.html#servizi" class="dropdown-link-personal">🏥 Diaria e Infotuni</a></li>
-            </ul>
-          </li>
-
-          <!-- Imprese (Dropdown) -->
-          <li class="nav-item-dropdown">
-            <a href="index.html#servizi" id="nav-business">
-              Imprese 
-              <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="index.html#servizi" class="dropdown-link-business">🏢 Responsabilità Civile (RC)</a></li>
-              <li><a href="index.html#servizi" class="dropdown-link-business">🏭 Incendio, Furto &amp; Immobili</a></li>
-              <li><a href="index.html#servizi" class="dropdown-link-business">👥 Welfare &amp; Dipendenti</a></li>
-              <li><a href="index.html#servizi" class="dropdown-link-business">🚜 Macchine Agricole &amp; Flotte</a></li>
-            </ul>
-          </li>
-          
-          <!-- Chi Sono (Dropdown) -->
-          <li class="nav-item-dropdown">
-            <a href="index.html#chi-sono">
-              Chi Sono 
-              <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-          </li>
-
-          <!-- Regolamentazione (Dropdown) -->
-          <li class="nav-item-dropdown">
-            <a href="index.html#trasparenza">
-              Regolamentazione 
-              <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="index.html#trasparenza">Trasparenza IVASS</a></li>
-              <li><a href="index.html#trasparenza">Gestione Reclami</a></li>
-            </ul>
-          </li>
-
-          <!-- Informazioni (Dropdown) -->
-          <li class="nav-item-dropdown">
-            <a href="index.html#contatti">
-              Informazioni 
-              <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="index.html#contatti">Sede Palazzo San Gervasio</a></li>
-            </ul>
-          </li>
+          <li><a href="index.html#servizi" id="nav-personal">Privati &amp; Famiglie <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="index.html#servizi" id="nav-business">Imprese <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="index.html#chi-sono">Chi Sono <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="index.html#trasparenza">Regolamentazione <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
+          <li><a href="index.html#contatti">Informazioni <svg class="nav-chevron-svg" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2.5 4.5L6 8L9.5 4.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></li>
         </ul>
+        <a href="preventivo.html" class="nav-mobile-cta">Preventivo</a>
       </nav>
-      <a href="preventivo.html" class="header-btn-preventivo">
+      <a href="preventivo.html" class="header-btn-preventivo" id="header-btn-preventivo">
         Preventivo
       </a>
     </div>
   </header>
+  <div class="nav-overlay" id="nav-overlay"></div>
 
   <!-- MAIN CONTENT -->
+
   <main class="privacy-main">
     <div class="privacy-container">
 
