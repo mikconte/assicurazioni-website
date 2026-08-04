@@ -91,5 +91,14 @@
   { "turn": 92, "summary": "Creata temporaneamente la favicon SVG ed i meta tag." },
   { "turn": 93, "summary": "Rimosso il file images/favicon.svg ed i relativi tag." },
   { "turn": 94, "summary": "Uniformato lo stile visivo delle card tra index.html e preventivo.html con illustrazioni SVG dorate (96px)." },
-  { "turn": 95, "summary": "Sincronizzati perfettamente l'Header ed il Footer di tutte le pagine (preventivo.html, privacy.html, grazie.html) prendendo index.html come riferimento unico 100% definitivo." }
+  { "turn": 95, "summary": "Sincronizzati l'Header ed il Footer di tutte le pagine prendendo index.html come riferimento unico master." },
+  { "turn": 96, "summary": "Implementato il Menu Hamburger Responsive per schermi mobile." },
+  { "turn": 97, "summary": "Ottimizzata la Top Announcement Bar per mobile." },
+  { "turn": 98, "summary": "Risolto il problema di sintassi CSS ripristinando il layout PC Desktop." },
+  { "turn": 99, "summary": "Eseguita la verifica sintattica e responsiva automatizzata." },
+  { "turn": 100, "summary": "Riprogettata la navigazione mobile drawer." },
+  { "turn": 101, "summary": "Ridotta la dimensione del font della Top Bar per mobile." },
+  { "turn": 102, "summary": "Eseguito il rollback completo via git restore allo stato pulito." },
+  { "turn": 103, "summary": "Impostata la Top Announcement Bar su riga unica no-wrap per schermi mobile." },
+  { "turn": 104, "summary": "Verificato e garantito l'allineamento orizzontale su riga unica per la versione responsive di tutte le risoluzioni mobile/tablet, ripulendo anche le vecchie classi CSS inutilizzate." }
 ]

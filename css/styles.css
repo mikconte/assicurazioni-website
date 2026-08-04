@@ -820,20 +820,6 @@ footer {
     border: 1px solid rgba(255, 255, 255, 0.08);
   }
 
-  /* Top Bar su Smartphone */
-  .top-bar-content {
-    flex-direction: column;
-    text-align: center;
-    gap: 6px;
-  }
-  .top-bar-features {
-    flex-direction: column;
-    gap: 4px;
-  }
-  .top-bar-features .divider {
-    display: none;
-  }
-
   /* Hero Section */
   .hero {
     padding: 40px 0 60px 0;
@@ -1062,14 +1048,18 @@ footer {
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .top-bar-wrapper {
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 8px;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 6px;
+    width: 100%;
   }
   .top-bar-chip {
-    display: none;
+    display: none !important;
+  }
+  .top-bar-badge, .top-bar-cta-phone {
+    white-space: nowrap;
   }
 }
 

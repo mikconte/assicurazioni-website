@@ -28,12 +28,12 @@ agy_memory/
 
 ---
 
-📍 **Checkpoint 60 — 2026-08-04T21:14 — Sincronizzati perfettamente l'Header ed il Footer di tutte le pagine prendendo index.html come riferimento master**
+📍 **Checkpoint 69 — 2026-08-04T22:03 — Riconfermata e pulita la Top Announcement Bar su riga unica per la versione responsive**
 
 ### ✅ Completato in questa sessione
-1. **Sincronizzazione Header e Navigazione**: Allineati tutti i dropdown ed i link di navigazione dell'Header in `preventivo.html`, `privacy.html` e `grazie.html` con la struttura definita in `index.html`.
-2. **Sincronizzazione Footer a Norma IVASS/GDPR**: Allineato il footer di tutte le pagine per includere lo stesso Menu Rapido, i contatti e le note legali sull'iscrizione al RUI e sulla vigilanza IVASS.
-3. **Validazione Test-Driven**: Superato il test E2E con esito 100% positivo.
+1. **Top Bar Responsive Single-Row**: Confermato l'allineamento orizzontale su un'unica riga (`flex-wrap: nowrap` e `justify-content: space-between`) per la Top Bar in tutte le modalità responsive (< 768px).
+2. **Pulizia Regole Legacy**: Rimosse le vecchie classi CSS non più usate per evitare conflitti o sovrapposizioni.
+3. **Validazione Test-Driven**: Esito E2E 100% positivo.
 
 ### 🔜 Prossimi passi suggeriti
 - Inserire il numero RUI reale e la P.IVA reale in footer di tutte le pagine (`[N_RUI]`, `[NUMERO_PIVA]`) quando disponibili.
