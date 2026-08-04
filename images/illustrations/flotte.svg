@@ -1,0 +1,94 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+  <!-- BACKGROUND ORGANIC BLOB (Stesso colore Gold d'accento #d97706 al 12% di opacità) -->
+  <path d="M 180 200 C 300 120, 520 130, 640 210 C 740 290, 730 430, 590 480 C 440 525, 250 515, 150 440 C 70 370, 80 260, 180 200 Z" fill="#d97706" opacity="0.12" />
+  <circle cx="680" cy="210" r="28" fill="#d97706" opacity="0.15" />
+  <circle cx="120" cy="230" r="16" fill="#d97706" opacity="0.15" />
+  <circle cx="620" cy="140" r="12" fill="#d97706" opacity="0.1" />
+
+  <!-- Background Shadows & Ground -->
+  <ellipse cx="270" cy="490" rx="190" ry="22" fill="#0a192f" opacity="0.08" />
+  <ellipse cx="560" cy="490" rx="170" ry="20" fill="#0a192f" opacity="0.08" />
+  <path d="M 50 490 L 750 490" stroke="#cbd5e1" stroke-width="4" stroke-linecap="round" stroke-dasharray="12 12" />
+
+  <!-- TRACTOR (Macchine Agricole) -->
+  <g id="tractor">
+    <!-- Main Tractor Body & Hood -->
+    <path d="M 120 380 L 240 380 L 260 410 L 260 450 L 110 450 Z" fill="#d97706" />
+    <path d="M 240 380 L 275 385 L 285 450 L 260 450 Z" fill="#b45309" />
+    
+    <!-- Engine Grill & Front Lights -->
+    <rect x="270" y="395" width="12" height="35" rx="3" fill="#0a192f" />
+    <circle cx="274" cy="405" r="5" fill="#fef08a" />
+
+    <!-- Exhaust Pipe -->
+    <rect x="230" y="310" width="10" height="70" rx="3" fill="#334155" />
+    <path d="M 230 310 L 245 295 L 245 310 Z" fill="#1e293b" />
+    <!-- Smoke rings -->
+    <circle cx="240" cy="275" r="10" fill="#94a3b8" opacity="0.4" />
+    <circle cx="252" cy="250" r="15" fill="#94a3b8" opacity="0.25" />
+
+    <!-- Cabin Roof & Pillars -->
+    <path d="M 125 290 L 210 290 L 225 380 L 115 380 Z" fill="#0a192f" />
+    <!-- Cabin Interior Glass -->
+    <path d="M 135 300 L 202 300 L 213 370 L 127 370 Z" fill="#bae6fd" opacity="0.85" />
+    <path d="M 170 300 L 180 300 L 195 370 L 185 370 Z" fill="#ffffff" opacity="0.4" />
+
+    <!-- Front Small Wheel -->
+    <circle cx="270" cy="455" r="32" fill="#0a192f" />
+    <circle cx="270" cy="455" r="20" fill="#cbd5e1" />
+    <circle cx="270" cy="455" r="12" fill="#d97706" />
+
+    <!-- Rear Huge Tractor Wheel (Treaded) -->
+    <circle cx="150" cy="435" r="62" fill="#0a192f" />
+    <!-- Wheel Treads -->
+    <path d="M 150 365 L 150 375 M 150 495 L 150 505 M 80 435 L 90 435 M 210 435 L 220 435 M 100 385 L 107 392 M 193 478 L 200 485 M 100 485 L 107 478 M 193 392 L 200 385" stroke="#ffffff" stroke-width="6" stroke-linecap="round" />
+    <circle cx="150" cy="435" r="42" fill="#cbd5e1" />
+    <circle cx="150" cy="435" r="24" fill="#d97706" />
+    <circle cx="150" cy="435" r="10" fill="#0a192f" />
+  </g>
+
+  <!-- COMMERCIAL TRUCK / FLOTTA AZIENDALE -->
+  <g id="commercial-truck">
+    <!-- Cargo Box (Container) -->
+    <rect x="420" y="270" width="220" height="170" rx="8" fill="#0a192f" />
+    <!-- Gold Stripe on Container -->
+    <rect x="420" y="340" width="220" height="24" fill="#d97706" />
+    <path d="M 440 310 L 600 310" stroke="#334155" stroke-width="4" stroke-dasharray="8 8" />
+
+    <!-- Fleet Shield Logo on Container -->
+    <path d="M 520 285 L 540 285 L 540 310 L 530 320 L 520 310 Z" fill="#f59e0b" />
+    <path d="M 526 295 L 534 295 L 530 308 Z" fill="#0a192f" />
+
+    <!-- Driver Cabin -->
+    <path d="M 640 330 L 705 330 Q 725 330 730 350 L 740 400 Q 745 440 740 440 L 640 440 Z" fill="#d97706" />
+    <!-- Cabin Window -->
+    <path d="M 650 342 L 695 342 Q 710 342 714 358 L 720 385 L 650 385 Z" fill="#e0f2fe" />
+    <path d="M 680 342 L 690 342 L 705 385 L 695 385 Z" fill="#ffffff" opacity="0.5" />
+    
+    <!-- Headlight & Bumper -->
+    <rect x="735" y="410" width="10" height="15" rx="3" fill="#fef08a" />
+    <rect x="730" y="425" width="18" height="15" rx="4" fill="#334155" />
+
+    <!-- Truck Wheels -->
+    <g id="truck-wheels">
+      <!-- Front Wheel -->
+      <circle cx="700" cy="455" r="32" fill="#0a192f" />
+      <circle cx="700" cy="455" r="18" fill="#cbd5e1" />
+      <circle cx="700" cy="455" r="8" fill="#d97706" />
+
+      <!-- Rear Double Wheels -->
+      <circle cx="470" cy="455" r="32" fill="#0a192f" />
+      <circle cx="470" cy="455" r="18" fill="#cbd5e1" />
+      <circle cx="470" cy="455" r="8" fill="#d97706" />
+
+      <circle cx="540" cy="455" r="32" fill="#0a192f" />
+      <circle cx="540" cy="455" r="18" fill="#cbd5e1" />
+      <circle cx="540" cy="455" r="8" fill="#d97706" />
+    </g>
+  </g>
+
+  <!-- Speed & Fleet Motion Graphics -->
+  <path d="M 370 330 L 400 330" stroke="#d97706" stroke-width="5" stroke-linecap="round" />
+  <path d="M 350 360 L 390 360" stroke="#0a192f" stroke-width="5" stroke-linecap="round" />
+  <path d="M 365 390 L 395 390" stroke="#d97706" stroke-width="5" stroke-linecap="round" />
+</svg>
