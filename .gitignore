@@ -1,0 +1,12 @@
+# Memoria agente AI
+agy_memory/
+
+# Dipendenze Node
+node_modules/
+
+# File interni di configurazione agente
+AGENTS.md
+SDLC_METHODOLOGY.md
+
+# Documentazione interna
+README.md
