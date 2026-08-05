@@ -998,6 +998,7 @@ footer {
   .logo img {
     width: 38px !important;
     height: 38px !important;
+    margin-top: -7px;
   }
 
   /* Nasconde il bottone Preventivo su mobile (appare nel menu) */
