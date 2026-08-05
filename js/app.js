@@ -256,9 +256,30 @@ document.addEventListener('DOMContentLoaded', () => {
       wizardStatus.className = 'form-status';
       wizardStatus.textContent = '';
 
+      // Controllo Antispam Honeypot Bot Trap
+      const honeypotVal = document.getElementById('honeypot-field')?.value;
+      if (honeypotVal) {
+        console.warn('Bot detected and blocked by honeypot antispam.');
+        window.location.href = 'grazie.html';
+        return;
+      }
+
       const formData = new FormData(wizardForm);
       const data = Object.fromEntries(formData.entries());
       const prodotto = data['prodotto-selezionato'];
+
+      // Validazione E-mail e Telefono con Regex Rigida (Anti-XSS / Anti-Injection)
+      const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+      if (data['email'] && !emailPattern.test(data['email'].trim())) {
+        mostraStatoWizard('Errore: Inserire un indirizzo e-mail valido.', 'error');
+        return;
+      }
+
+      const phonePattern = /^[\+0-9\s\-\.\(\)]{6,20}$/;
+      if (data['telefono'] && !phonePattern.test(data['telefono'].trim())) {
+        mostraStatoWizard('Errore: Inserire un numero di telefono valido (es. +39 347 1234567).', 'error');
+        return;
+      }
 
       if (!data['consenso-privacy']) {
         mostraStatoWizard('Errore: È necessario accettare l\'Informativa sulla Privacy.', 'error');
@@ -423,4 +444,64 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // ==========================================
+  // 5. UTILITY ANTI-XSS & SANITIZZAZIONE INPUT
+  // ==========================================
+  window.sanitizeInput = function(str) {
+    if (typeof str !== 'string') return str;
+    return str
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#x27;')
+      .replace(/\//g, '&#x2F;');
+  };
+
+  // Sanitizzazione automatica in-line per tutti gli input di testo
+  document.querySelectorAll('input[type="text"], input[type="email"], textarea').forEach(input => {
+    input.addEventListener('blur', () => {
+      if (input.value) {
+        input.value = input.value.trim().replace(/[<>]/g, '');
+      }
+    });
+  });
+
+  // ==========================================
+  // 6. GESTIONE BANNER COOKIE GDPR CONFORME
+  // ==========================================
+  const consentKey = 'falcitelli_cookie_consent';
+  const savedConsent = localStorage.getItem(consentKey);
+
+  if (!savedConsent) {
+    const cookieBanner = document.createElement('div');
+    cookieBanner.id = 'gdpr-cookie-banner';
+    cookieBanner.className = 'cookie-banner';
+    cookieBanner.setAttribute('role', 'dialog');
+    cookieBanner.setAttribute('aria-label', 'Informativa Cookie');
+    cookieBanner.innerHTML = `
+      <div class="cookie-banner-content">
+        <p>
+          Questo sito utilizza unicamente cookie tecnici necessari al corretto funzionamento della navigazione e dei form. Rispettiamo la tua privacy e la direttiva GDPR (Reg. UE 2016/679).
+          <a href="privacy.html#cookie" target="_blank" rel="noopener noreferrer">Informativa Cookie & Privacy ↗</a>
+        </p>
+        <div class="cookie-banner-actions">
+          <button id="btn-cookie-accept" class="btn-cookie-accept">Accetta</button>
+          <button id="btn-cookie-technical" class="btn-cookie-technical">Solo Tecnici</button>
+        </div>
+      </div>
+    `;
+    document.body.appendChild(cookieBanner);
+
+    const closeBanner = (status) => {
+      localStorage.setItem(consentKey, status);
+      cookieBanner.classList.add('fading-out');
+      setTimeout(() => cookieBanner.remove(), 300);
+    };
+
+    document.getElementById('btn-cookie-accept')?.addEventListener('click', () => closeBanner('accepted'));
+    document.getElementById('btn-cookie-technical')?.addEventListener('click', () => closeBanner('technical'));
+  }
+
 });
+

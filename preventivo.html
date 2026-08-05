@@ -493,7 +493,7 @@
             <div class="checkbox-group" style="margin-top: 24px;">
               <label class="checkbox-label">
                 <input type="checkbox" id="consenso-privacy-w" name="consenso-privacy" required>
-                <span>Accetto l'informativa sulla <a href="privacy.html" target="_blank">Privacy Policy</a> ed autorizzo il trattamento dei dati personali per la formulazione del preventivo. <span class="checkbox-required-indicator">*</span></span>
+                <span>Accetto l'informativa sulla <a href="privacy.html" target="_blank" rel="noopener noreferrer">Privacy Policy</a> ed autorizzo il trattamento dei dati personali per la formulazione del preventivo. <span class="checkbox-required-indicator">*</span></span>
               </label>
 
               <!-- Consenso Sanitari (Visibile solo per Vita e Diaria) -->
@@ -502,6 +502,9 @@
                 <span><strong>Consenso Dati Sensibili:</strong> Autorizzo espressamente il trattamento dei dati relativi allo stato di salute al fine esclusivo di formulare il preventivo per la polizza Vita o Diaria. <span class="checkbox-required-indicator">*</span></span>
               </label>
             </div>
+
+            <!-- TRAPPA ANTISPAM HONEYPOT PER BOT AUTOMATICI -->
+            <input type="text" name="_gotcha" id="honeypot-field" style="display:none !important;" tabindex="-1" autocomplete="off">
 
             <div class="wizard-actions">
               <button type="button" class="btn-secondary" id="btn-back-to-step-2">⟵ Indietro</button>

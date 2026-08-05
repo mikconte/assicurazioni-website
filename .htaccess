@@ -1,0 +1,36 @@
+# ==========================================
+# FALCITELLI ASSICURAZIONI - ENTERPRISE SERVER SECURITY CONFIG (.htaccess)
+# Protection Against XSS, Clickjacking, MIME Sniffing, Data Leaks & Protocol Downgrade
+# ==========================================
+
+# 1. HTTP Security Headers & HSTS (Strict Transport Security)
+<IfModule mod_headers.c>
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+  Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+  Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https://formspree.io https://formsubmit.co; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://formsubmit.co; frame-ancestors 'none';"
+</IfModule>
+
+# 2. Force HTTPS Protocol Redirection
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 3. Prevent Directory Browsing (Directory Indexing Protection)
+Options -Indexes
+
+# 4. Restrict Access to Hidden System Files (.git, .env, .htaccess)
+<FilesMatch "^\.">
+  Order allow,deny
+  Deny from all
+</FilesMatch>
+
+# 5. Enable Gzip Compression for Fast Load Times
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>

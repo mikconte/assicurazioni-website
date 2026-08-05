@@ -1,12 +1,21 @@
-# Memoria agente AI
-agy_memory/
+# Credenziali & Ambienti di Sicurezza
+.env
+.env.local
+.env.*
+*.pem
+*.key
 
-# Dipendenze Node
+# Dipendenze Node & Build
 node_modules/
+dist/
+build/
 
-# File interni di configurazione agente
+# File di Sistema Operativo
+.DS_Store
+Thumbs.db
+
+# Memoria agente AI & Regole di Sviluppo
+agy_memory/
 AGENTS.md
-SDLC_METHODOLOGY.md
-
-# Documentazione interna
 README.md
+SDLC_METHODOLOGY.md
