@@ -109,17 +109,23 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   font-family: var(--font-serif);
   font-weight: 700;
-  font-size: clamp(1.20rem, 2vw, 1.55rem);
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
   letter-spacing: -0.01em;
   color: var(--color-navy);
 }
 
-.logo svg {
-  width: 26px;
-  height: 26px;
+.logo svg,
+.logo img {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  vertical-align: middle;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
+  margin-right: 0;
 }
 
 .logo span {
@@ -959,6 +965,15 @@ footer {
     align-items: center;
     padding: 0 16px;
     gap: 0;
+  }
+  .logo {
+    gap: 6px;
+    font-size: 1.12rem;
+  }
+  .logo svg,
+  .logo img {
+    width: 42px !important;
+    height: 42px !important;
   }
 
   /* Nasconde il bottone Preventivo su mobile (appare nel menu) */
