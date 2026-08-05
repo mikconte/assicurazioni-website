@@ -636,7 +636,7 @@ input:focus, select:focus, textarea:focus {
    SEZIONE CHI SONO (ABOUT SECTION)
    ========================================== */
 .about-section {
-  padding: 80px 0;
+  padding: 45px 0 70px 0;
   background-color: var(--color-navy);
   color: #ffffff;
   border-top: 1px solid var(--border-card);
@@ -651,8 +651,8 @@ input:focus, select:focus, textarea:focus {
 .about-title {
   color: #ffffff !important;
   font-family: var(--font-serif);
-  font-size: 2.2rem;
-  margin-bottom: 14px;
+  font-size: 2.4rem;
+  margin-bottom: 26px;
 }
 
 .about-title span {
@@ -664,7 +664,7 @@ input:focus, select:focus, textarea:focus {
   color: #94a3b8;
   font-size: 0.95rem;
   max-width: 720px;
-  margin: 0 auto 36px auto;
+  margin: 0 auto 48px auto;
   line-height: 1.6;
 }
 
@@ -710,8 +710,13 @@ input:focus, select:focus, textarea:focus {
    TRASPARENZA & TRASMISSIONI (IVASS)
    ========================================== */
 .transparency-section {
-  padding: 80px 0;
+  padding: 45px 0 70px 0;
   background-color: #ffffff;
+}
+
+.transparency-section .section-title {
+  font-size: 2.4rem;
+  margin-bottom: 36px;
 }
 
 .transparency-grid {
@@ -1178,10 +1183,12 @@ footer {
     line-height: 1.3;
   }
 
-  /* Form & Footer */
+  /* Form & Footer su Smartphone */
   .footer-top {
     grid-template-columns: 1fr;
     gap: 30px;
+    padding-left: 38px;
+    padding-right: 38px;
   }
   .form-row {
     grid-template-columns: 1fr;
