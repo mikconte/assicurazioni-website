@@ -109,12 +109,14 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
-  gap: 6px;
-  font-family: var(--font-serif);
-  font-weight: 700;
-  font-size: clamp(1.05rem, 2vw, 1.55rem);
-  letter-spacing: -0.01em;
+  gap: 1px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 800;
+  font-size: clamp(1.00rem, 1.6vw, 1.32rem);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
   color: var(--color-navy);
+  white-space: nowrap;
 }
 
 .logo svg,
@@ -972,8 +974,10 @@ footer {
     gap: 0;
   }
   .logo {
-    gap: 6px;
-    font-size: 1.40rem !important;
+    gap: 2px;
+    font-size: clamp(0.88rem, 3.6vw, 1.08rem) !important;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
   }
   .logo svg,
   .logo img {
