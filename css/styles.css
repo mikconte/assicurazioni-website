@@ -110,11 +110,13 @@ header .container {
   display: flex;
   align-items: center;
   gap: 6px;
-  font-family: var(--font-serif);
+  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
-  font-size: clamp(1.05rem, 2vw, 1.55rem);
+  font-size: clamp(0.95rem, 1.5vw, 1.25rem);
+  text-transform: uppercase;
   letter-spacing: -0.01em;
   color: var(--color-navy);
+  white-space: nowrap;
 }
 
 .logo svg,
@@ -125,6 +127,7 @@ header .container {
   vertical-align: middle;
   mix-blend-mode: multiply;
   flex-shrink: 0;
+  margin-top: -7px;
   margin-right: 0;
 }
 
@@ -982,17 +985,19 @@ footer {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 0 16px;
-    gap: 0;
+    padding: 0 14px;
+    gap: 4px;
   }
   .logo {
-    gap: 6px;
-    font-size: 1.40rem !important;
+    gap: 3px;
+    font-size: clamp(1.02rem, 4.3vw, 1.25rem) !important;
+    white-space: nowrap;
+    max-width: calc(100% - 40px);
   }
   .logo svg,
   .logo img {
-    width: 52px !important;
-    height: 52px !important;
+    width: 38px !important;
+    height: 38px !important;
   }
 
   /* Nasconde il bottone Preventivo su mobile (appare nel menu) */
