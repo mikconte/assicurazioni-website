@@ -706,6 +706,24 @@ input:focus, select:focus, textarea:focus {
   font-weight: 600;
 }
 
+/* Sub-grid Contatti & Sede integrata in Chi Sono */
+.about-contact-grid {
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  text-align: left;
+}
+
+.about-contact-box {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
 /* ==========================================
    TRASPARENZA & TRASMISSIONI (IVASS)
    ========================================== */
@@ -1322,6 +1340,10 @@ footer {
   }
   .about-highlight-item span {
     font-size: 0.78rem;
+  }
+  .about-contact-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
   }
 
   /* Sezione Trasparenza & Regolamentazione su Mobile */
