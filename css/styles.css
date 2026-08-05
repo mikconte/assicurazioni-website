@@ -382,7 +382,7 @@ nav a:hover {
 }
 
 .section-title {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-serif);
   text-align: center;
   margin-bottom: 48px;
   font-size: 2rem;
@@ -392,7 +392,7 @@ nav a:hover {
 }
 
 .section-title span {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: var(--font-serif);
   color: var(--color-accent);
 }
 
@@ -1285,12 +1285,12 @@ footer {
 
   /* Sezione Chi Sono / La Tua Consulente di Fiducia su Mobile */
   .about-section {
-    padding: 48px 0;
+    padding: 42px 8px;
   }
   .about-title {
     font-size: 1.55rem !important;
     line-height: 1.35;
-    margin-bottom: 12px;
+    margin-bottom: 20px;
   }
   .about-subtitle {
     font-size: 0.85rem;
@@ -1321,13 +1321,16 @@ footer {
   .transparency-section {
     padding: 44px 0;
   }
+  .transparency-section .container {
+    padding: 0 38px;  
+  }
   .transparency-section p {
     font-size: 0.82rem !important;
     line-height: 1.5;
   }
   .section-title {
     font-size: 1.50rem;
-    margin-bottom: 22px;
+    margin-bottom: 32px;
   }
   .transparency-grid {
     grid-template-columns: 1fr;
