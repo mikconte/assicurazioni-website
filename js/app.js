@@ -423,4 +423,44 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
+  // ==========================================
+  // 4. GESTIONE MENU HAMBURGER MOBILE (UNIVERSELE)
+  // ==========================================
+  const navBtn = document.getElementById('nav-hamburger');
+  const mainNav = document.getElementById('main-nav');
+  const navOverlay = document.getElementById('nav-overlay');
+
+  if (navBtn && mainNav && navOverlay) {
+    const openMenu = () => {
+      mainNav.classList.add('is-open');
+      navBtn.classList.add('is-open');
+      navOverlay.classList.add('is-open');
+      navBtn.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeMenu = () => {
+      mainNav.classList.remove('is-open');
+      navBtn.classList.remove('is-open');
+      navOverlay.classList.remove('is-open');
+      navBtn.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    };
+
+    navBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      mainNav.classList.contains('is-open') ? closeMenu() : openMenu();
+    });
+
+    navOverlay.addEventListener('click', closeMenu);
+
+    document.querySelectorAll('#main-nav a').forEach(link => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 768) closeMenu();
+    });
+  }
+
 });
