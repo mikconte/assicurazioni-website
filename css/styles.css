@@ -55,7 +55,7 @@ html {
 
 /* Compensazione dell'ingombro dell'Header Fisso/Sticky per le ancore */
 section, footer, [id] {
-  scroll-margin-top: 55px;
+  scroll-margin-top: 35px;
 }
 
 body {
@@ -109,15 +109,12 @@ header .container {
 .logo {
   display: flex;
   align-items: center;
-  padding-top: 2px;
-  gap: 1px;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-weight: 800;
-  font-size: clamp(1.00rem, 1.6vw, 1.32rem);
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
+  gap: 6px;
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: clamp(1.05rem, 2vw, 1.55rem);
+  letter-spacing: -0.01em;
   color: var(--color-navy);
-  white-space: nowrap;
 }
 
 .logo svg,
@@ -638,6 +635,10 @@ input:focus, select:focus, textarea:focus {
 /* ==========================================
    SEZIONE CHI SONO (ABOUT SECTION)
    ========================================== */
+#chi-sono {
+  scroll-margin-top: -15px;
+}
+
 .about-section {
   padding: 45px 0 70px 0;
   background-color: var(--color-navy);
@@ -689,7 +690,6 @@ input:focus, select:focus, textarea:focus {
 
 .about-highlights {
   display: flex;
-  flex-direction: row;
   flex-wrap: wrap;
   gap: 20px;
   border-top: 1px solid rgba(255,255,255,0.1);
@@ -701,7 +701,7 @@ input:focus, select:focus, textarea:focus {
 .about-highlight-item {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
 }
 
 .about-highlight-item span {
@@ -731,6 +731,11 @@ input:focus, select:focus, textarea:focus {
 /* ==========================================
    TRASPARENZA & TRASMISSIONI (IVASS)
    ========================================== */
+
+#trasparenza {
+  scroll-margin-top: -10px;
+}
+   
 .transparency-section {
   padding: 45px 0 70px 0;
   background-color: #ffffff;
@@ -960,6 +965,12 @@ footer {
   section, footer, [id] {
     scroll-margin-top: 70px;
   }
+    #servizi {
+    scroll-margin-top: 30px;
+  }
+  #chi-sono {
+    scroll-margin-top: -5px;
+  }
 
   /* Layout generale e container — Più spazio ai lati su Mobile */
   .container {
@@ -975,12 +986,8 @@ footer {
     gap: 0;
   }
   .logo {
-    align-items: center;
-    padding-top: 2px;
-    gap: 2px;
-    font-size: clamp(1.10rem, 4.5vw, 1.35rem) !important;
-    letter-spacing: 0.01em;
-    white-space: nowrap;
+    gap: 6px;
+    font-size: 1.40rem !important;
   }
   .logo svg,
   .logo img {
@@ -1341,33 +1348,13 @@ footer {
     margin-bottom: 16px;
   }
   .about-highlights {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 8px;
-    padding-top: 18px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    align-items: start;
-    text-align: center;
-  }
-  .about-highlight-item {
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 6px;
-    white-space: normal;
-    text-align: center;
-  }
-  .about-highlight-item svg {
-    flex-shrink: 0;
+    align-items: flex-start;
+    gap: 12px;
+    padding-top: 18px;
   }
   .about-highlight-item span {
-    font-size: 0.72rem;
-    line-height: 1.25;
-    color: #f8fafc;
-    font-weight: 600;
-    white-space: normal;
-    text-align: center;
+    font-size: 0.78rem;
   }
   .about-contact-grid {
     grid-template-columns: 1fr;
@@ -2079,104 +2066,4 @@ footer {
   width: 1px;
   height: 30px;
   background-color: rgba(255, 255, 255, 0.1);
-}
-
-/* ==========================================
-   BANNER COOKIE GDPR CONFORME (VANILLA JS)
-   ========================================== */
-.cookie-banner {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 860px;
-  background: var(--color-navy);
-  color: #ffffff;
-  border: 1px solid rgba(234, 179, 8, 0.3);
-  border-radius: 14px;
-  padding: 18px 24px;
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
-  z-index: 9999;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.cookie-banner.fading-out {
-  opacity: 0;
-  transform: translate(-50%, 20px);
-}
-
-.cookie-banner-content {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-}
-
-.cookie-banner-content p {
-  font-size: 0.84rem;
-  line-height: 1.5;
-  color: #cbd5e1;
-  margin: 0;
-}
-
-.cookie-banner-content a {
-  color: var(--color-accent);
-  text-decoration: underline !important;
-  font-weight: 600;
-}
-
-.cookie-banner-actions {
-  display: flex;
-  gap: 10px;
-  flex-shrink: 0;
-}
-
-.btn-cookie-accept {
-  background: var(--color-accent);
-  color: #ffffff;
-  border: none;
-  padding: 8px 18px;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.btn-cookie-accept:hover {
-  background: var(--color-accent-hover);
-}
-
-.btn-cookie-technical {
-  background: rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s ease;
-}
-
-.btn-cookie-technical:hover {
-  background: rgba(255, 255, 255, 0.15);
-  color: #ffffff;
-}
-
-@media (max-width: 768px) {
-  .cookie-banner {
-    bottom: 12px;
-    padding: 16px;
-  }
-  .cookie-banner-content {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-  }
-  .cookie-banner-actions {
-    width: 100%;
-    justify-content: flex-end;
-  }
 }
