@@ -306,46 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
   }
 
-  // ==========================================
-  // 2. GESTIONE FORM CLASSICO (index.html se presente)
-  // ==========================================
-  const formPreventivo = document.getElementById('form-preventivo');
-  if (formPreventivo && !wizardForm) {
-    const tabButtons = document.querySelectorAll('.tab-button');
-    const dynamicFieldGroups = document.querySelectorAll('.dynamic-fields');
-    const consentSanitarioGroup = document.getElementById('group-consenso-sanitario');
-    const inputConsensoSanitario = document.getElementById('consenso-sanitario');
-    const inputProdottoSelezionato = document.getElementById('prodotto-selezionato');
-    const formStatus = document.getElementById('form-status');
-
-    tabButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const targetTab = button.getAttribute('data-tab');
-        tabButtons.forEach(btn => btn.classList.remove('active'));
-        button.classList.add('active');
-        if (inputProdottoSelezionato) inputProdottoSelezionato.value = targetTab;
-
-        dynamicFieldGroups.forEach(group => {
-          if (group.id === `fields-${targetTab}`) {
-            group.classList.add('active');
-          } else {
-            group.classList.remove('active');
-          }
-        });
-
-        if (targetTab === 'vita' || targetTab === 'diaria') {
-          if (consentSanitarioGroup) consentSanitarioGroup.style.display = 'flex';
-          if (inputConsensoSanitario) inputConsensoSanitario.setAttribute('required', 'required');
-        } else {
-          if (consentSanitarioGroup) consentSanitarioGroup.style.display = 'none';
-          if (inputConsensoSanitario) {
-            inputConsensoSanitario.removeAttribute('required');
-            inputConsensoSanitario.checked = false;
-          }
-        }
-      });
-    });
-  }
 
   // ==========================================
   // 3. GESTIONE SWITCHER SEGMENTATO (PRIVATI VS AZIENDE)
