@@ -1326,18 +1326,20 @@ footer {
 
   /* Sezione Trasparenza & Regolamentazione su Mobile */
   .transparency-section {
-    padding: 44px 0;
+    padding: 42px 0;
   }
   .transparency-section .container {
-    padding: 0 38px;  
+    padding-left: 38px;
+    padding-right: 38px;
+  }
+  .transparency-section .section-title {
+    font-size: 1.55rem !important;
+    line-height: 1.35;
+    margin-bottom: 20px !important;
   }
   .transparency-section p {
-    font-size: 0.82rem !important;
-    line-height: 1.5;
-  }
-  .section-title {
-    font-size: 1.50rem;
-    margin-bottom: 32px;
+    font-size: 0.84rem !important;
+    line-height: 1.55;
   }
   .transparency-grid {
     grid-template-columns: 1fr;
